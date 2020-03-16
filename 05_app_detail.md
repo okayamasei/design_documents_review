@@ -1,35 +1,42 @@
 # アプリケーション詳細設計_レビュー
+
 ## 全体
-- 管理者権限で実行するアクションのURLが管理者のものとわかるようになってない。
-- トップページが明記されてない。
-- アーティストに対するCRUDがない。
-- ジャンルに対するCRUDがない。
-- レーベルに対するCRUDがない。
-- お届け先住所変更画面に対するアクションが不明。
-- 支払い方法の確定画面に対するアクションが不明。
-- ユーザ退会確認画面に対するアクションが不明。
-- ユーザ退会完了画面に対するアクションが不明。
+- deviseのルーティングがない。
+- 使用するgemの記載がない。
 
-## devise
-- deviseで生成されるパスについての記述がない。
-  
-## users
-- 論理削除を使用するUserモデルにはdeleteメソッド不要
+## public
+### 共通
+- URLに顧客のidを含んでいる。
+- 注文情報確認画面、注文完了画面、退会確認画面に相当するアクションがない。
 
-## cds
-- 論理削除を使用するCdモデルにはdeleteメソッド不要
+### end_users
+- 退会処理のメソッドがDELETEになっている。
+ 
+### cart_items
+- 不要なアクションeditがある。
+- "カートを空にする"に相当するアクションがない。
+ 
+### order_items
+- orders#index,showであるべきなのにorder_items#index,showになっている。
 
-## cart_items
-- editアクションが存在するが、該当するページがワイヤーフレームにない。
+### address
+- 複数形になっていない。x address → o addresses
 
-## orders
-- indexとnewでurlが重複している。
 
-## order_details
-- order_detailはorderに付随して生成するので、order_detailsにcreateは不要。
+## admin
+### 共通
+- 管理者のトップページがない。
+- 製作ステータスの更新に相当するアクションがない。
 
-## admins
-- showとeditでURLが重複している。
+### items
+- newアクションのURLが不適当。
+- 不要なアクションdestroyがある。
+
+### genres
+- updateアクションがない。
+
+### order_items
+- publicと同じく、注文履歴はorder_itemsではなくordersである。
 
 # 注意
 * マークダウン形式で記入してください。
