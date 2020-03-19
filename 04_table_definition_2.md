@@ -15,10 +15,6 @@
 - 主キーにindexがない
 - ship_name, ship_address, ship_tel, ship_codeとなっているが, admin同様にship_の接頭辞はいらない。
 
-## products
-- stockは入荷と売上から算出できるので不要
-- stock_statusは算出した在庫数から判別できるので不要。
-
 ## discs
 - disc_numのdisc_は不要
 - products_idはproduct_idにする。外部キーなので。
@@ -40,11 +36,7 @@
 - products_idはproduct_idにする
 - buy numは間を_でつなげる
 
-## sell_details
-- 購入時の価格を保持するカラムがない
-- 親モデル(sell)のidをもっていない
-
-## sell
+## order
 - totalは何のtotalかわからない。
 - 子モデルのidは不要
 
