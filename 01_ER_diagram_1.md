@@ -1,4 +1,4 @@
-# ER図1
+# ER図1 
 ## 全体
 - Railsで自動で作成されるid, created_at, updated_atのカラムが考慮されていないです。
 	>ActiveRecordで作られる登録日、更新日の記述もしましょう。
